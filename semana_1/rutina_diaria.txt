@@ -1,0 +1,126 @@
+                                     Algoritmo rutina diaria
+
+    1.  Inicio
+    2.  1. Levantarse y organizarse
+🩷 a. Levantarse de la cama.
+🩷 b. Hacer la cama.
+    3.  2. Lavarse las manos
+🩷 a. Agarrar el jabón.
+🩷 b. Abrir la llave de agua.
+🩷 c. Mezclar el jabón con el agua en las manos.
+🩷 d. Frotar hasta que se sientan limpias.
+🩷 e. Enjuagar y secar con un paño.
+    4.  3. Lavarse los dientes
+🩷 a. Enjuagar la boca.
+🩷 b. Mojar el cepillo de dientes.
+🩷 c. Colocar la pasta dental en el cepillo.
+🩷 d. Limpiar cada diente con el cepillo hasta dejarlos completamente limpios.
+    5.  4. Hidratación y preparación
+🩷 a. Beber agua y jugo verde.
+ Si hay jugo verde:
+🩷 - Beberlo.
+ Sino:
+🩷 - Prepararlo.
+FinSi
+    6.  5. Bañarse y cambiarse de ropa
+🩷 a. Tomar un baño.
+ Si hay ropa limpia:
+🩷 - Cambiarse de ropa.
+ Sino:
+🩷 - Lavar ropa.
+🩷 - Esperar a que se seque.
+🩷 - Cambiarse de ropa.
+FinSi
+    7.  6. Actividad física y alimentación
+🩷 a. Realizar ejercicios.
+ Si hay alimentos disponibles:
+🩷 - Preparar comida y alimentarse.
+ Sino:
+🩷 - Ir a comprar ingredientes.
+🩷 - Preparar comida y alimentarse.
+FinSi
+    8.  7. Mientras haya platos sucios:
+🩷 - Lavar platos.
+FinMientras
+    9.  8. Tareas productivas
+🩷 a. Estudiar.
+🩷 b. Trabajar.
+    10.  9. Tiempo personal y descanso
+🩷 a. Relajarse.
+🩷 b. Dormir.
+    11.  Fin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Aquí tienes una versión mejorada de tu algoritmo siguiendo tus recomendaciones:
+
+Algoritmo: Rutina Diaria
+Inicio
+    1. Levantarse y organizarse
+        ◦ Levantarse de la cama.
+        ◦ Hacer la cama.
+    2. Lavarse las manos
+        ◦ Agarrar el jabón.
+        ◦ Abrir la llave de agua.
+        ◦ Mezclar el jabón con el agua en las manos.
+        ◦ Frotar hasta que se sientan limpias.
+        ◦ Enjuagar y secar con un paño.
+    3. Lavarse los dientes
+        ◦ Enjuagar la boca.
+        ◦ Mojar el cepillo de dientes.
+        ◦ Colocar la pasta dental en el cepillo.
+        ◦ Cepillar cada diente hasta que estén completamente limpios.
+    4. Beber agua y jugo verde
+        ◦ Si hay jugo verde, beberlo.
+        ◦ Si no hay jugo verde:
+            ▪ Preparar jugo verde.
+            ▪ Beberlo.
+FinSi
+    5. Bañarse
+        ◦ Entrar a la ducha.
+        ◦ Aplicar jabón y shampoo.
+        ◦ Enjuagar.
+        ◦ Secarse con una toalla.
+    6. Vestirse
+        ◦ Si hay ropa limpia, vestirse.
+        ◦ Si no hay ropa limpia:
+            ▪ Lavar ropa.
+            ▪ Esperar a que se seque.
+            ▪ Vestirse.
+FinSi
+    7. Ejercicio físico
+        ◦ Realizar estiramientos.
+        ◦ Hacer una rutina de ejercicios.
+    8. Alimentarse
+        ◦ Si hay alimentos disponibles, preparar desayuno.
+        ◦ Si no hay alimentos:
+            ▪ Ir a comprar ingredientes.
+            ▪ Preparar desayuno.
+FinSi
+    9. Lavar platos
+Mientras haya platos sucios
+        ◦ Lavar platos.
+FinMientras
+    10. Estudiar
+    • Revisar material de estudio.
+    • Tomar apuntes.
+    11. Trabajar
+    • Revisar tareas pendientes.
+    • Realizar actividades laborales.
+    12. Tiempo personal y descanso
+    • Relajarse ("chill").
+    • Dormir.
+Fin

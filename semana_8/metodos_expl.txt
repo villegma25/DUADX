@@ -1,0 +1,49 @@
+Your table already has these:
+
+close()  Cierra el archivo. Es importante cerrar los archivos después de usarlos para liberar recursos.
+
+
+detach() Separa el "buffer" del archivo. Esto significa que rompe la conexión entre un archivo de texto y su flujo subyacente de bytes. Es poco común y se usa principalmente con archivos abiertos en modo binario ('b') cuando se quiere acceder directamente al flujo de bytes sin procesarlo como texto. No se usa en tareas básicas de lectura/escritura.
+
+
+
+fileno() Devuelve un número entero que representa el descriptor de archivo, un número que el sistema operativo usa internamente para identificar el archivo abierto. Es útil cuando se trabaja con procesos a bajo nivel o con bibliotecas externas que requieren este número. No se usa comúnmente en programación básica.
+
+
+flush() Fuerza que los datos que están en memoria (en el buffer) se escriban inmediatamente en el archivo. Es útil cuando quieres asegurarte de que los datos se guarden sin esperar a que el archivo se cierre automáticamente. Muy usado en archivos grandes o en procesos que escriben poco a poco (como logs o streaming).
+
+
+isatty() Retorna True si el archivo está conectado directamente a un terminal o consola (como cuando lees desde el teclado o escribes en la pantalla). Es útil para saber si la entrada o salida es interactiva o si está siendo redirigida desde/ hacia un archivo o script.
+
+
+read() Lee hasta n caracteres (o bytes, si es un archivo binario) del archivo. Si se omite n, entonces lee todo el contenido del archivo desde la posición actual del cursor hasta el final.
+
+
+readable() Devuelve True si el archivo se puede leer. Sirve para verificar si el archivo fue abierto en un modo de lectura ('r', 'r+', etc.). Muy útil si estás trabajando con archivos abiertos por otros programas o si quieres evitar errores al intentar leer archivos abiertos solo para escribir.
+
+
+readline() Lee una línea del archivo cada vez que se llama. El cursor se mueve automáticamente al siguiente salto de línea (\n) después de leer. Si llegas al final del archivo, devuelve una cadena vacía.
+
+
+readlines() Cambia la posición del cursor dentro del archivo. El parámetro offset indica el número de bytes a mover desde el inicio del archivo (por defecto). Esto te permite volver a leer una parte específica del archivo sin tener que abrirlo de nuevo.
+
+
+seek(offset) Cambia la posición del cursor dentro del archivo. El parámetro offset indica el número de bytes a mover desde el inicio del archivo (por defecto). Esto te permite volver a leer una parte específica del archivo sin tener que abrirlo de nuevo.
+
+
+seekable() Retorna True si el archivo permite cambiar la posición del cursor utilizando el método seek(). Esto es útil para archivos donde no se puede mover el cursor (como ciertos archivos de solo lectura o archivos comprimidos).
+
+
+tell() Retorna la posición actual del cursor en el archivo, es decir, el número de bytes que se han leído desde el inicio del archivo. Es útil para saber dónde te encuentras dentro del archivo, especialmente cuando usas seek() para mover el cursor.
+
+
+truncate(size)	Redimensiona el archivo a un tamaño específico (en bytes). Si se proporciona un valor size, el archivo se corta a esa longitud; si no se proporciona, se corta en la posición actual del cursor. Si el archivo es más corto que el nuevo tamaño, los bytes sobrantes se rellenan con ceros.
+
+
+writable() Devuelve True si el archivo puede ser escrito (es decir, si ha sido abierto en un modo de escritura, como 'w', 'a', 'r+', etc.). Si el archivo se abre solo en modo de lectura, devuelve False.
+
+
+write() Escribe la cadena de caracteres proporcionada en el archivo. Si el archivo está abierto en modo de escritura, sobrescribirá los datos existentes, a menos que se haya abierto en modo de agregación ('a'), en cuyo caso los datos se añadirán al final.
+
+
+writelines(lista) Escribe una lista de cadenas al archivo. Cada elemento de la lista se escribe en el archivo, pero no agrega saltos de línea automáticamente, por lo que si deseas incluir saltos de línea, debes hacerlo manualmente.
