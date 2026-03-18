@@ -1,0 +1,44 @@
+[
+  {
+    "date": "2026-06-05",
+    "title": "Birth",
+    "amount": -1000.0,
+    "category": "Spending",
+    "type": "Expense"
+  },
+  {
+    "date": "2026-03-15",
+    "title": "Hustle",
+    "amount": 300.0,
+    "category": "In",
+    "type": "Income"
+  },
+  {
+    "date": "2026-09-13",
+    "title": "AK",
+    "amount": 15000.0,
+    "category": "Spending",
+    "type": "Income"
+  },
+  {
+    "date": "2026-15-25",
+    "title": "FOrm",
+    "amount": 54949.0,
+    "category": "Spending",
+    "type": "Income"
+  },
+  {
+    "date": "0226-05-16",
+    "title": "0.0",
+    "amount": -9799292.0,
+    "category": "Spending",
+    "type": "Expense"
+  },
+  {
+    "date": "2026-03-08",
+    "title": "Yeah",
+    "amount": 1000000000.0,
+    "category": "THXXX",
+    "type": "Income"
+  }
+]
