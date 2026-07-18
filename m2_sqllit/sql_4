@@ -1,0 +1,247 @@
+# SQL Normalization Exercises
+
+=========================================================
+EXERCISE 1 - ORDERS
+=========================================================
+
+## Original Table (UNF)
+
+| Order ID | Customer Name | Customer Phone | Address | Item ID | Item Name | Price | Quantity | Special Request | Delivery Time |
+|----------|---------------|----------------|---------|---------|-----------|-------|----------|-----------------|--------------|
+|001|Alice|123-456-7890|123 Main St|101|Cheeseburger|8|2|No onions|6:00 PM|
+|001|Alice|123-456-7890|123 Main St|102|Fries|3|1|Extra ketchup|6:00 PM|
+|002|Bob|987-654-3210|456 Elm St|103|Pizza|12|1|Extra cheese|7:30 PM|
+|002|Bob|987-654-3210|4th Avenue|102|Fries|3|2|None|7:30 PM|
+|003|Claire|555-123-4567|789 Oak St|105|Salad|6|1|No croutons|12:00 PM|
+|004|Claire|555-123-4567|464 Georgia St|106|Water|1|1|None|5:00 PM|
+
+---------------------------------------------------------
+FIRST NORMAL FORM (1NF)
+---------------------------------------------------------
+
+Primary Key: (OrderID, ItemID)
+
+All values are atomic and there are no repeating groups.
+
+Problems:
+- Customer information is repeated.
+- Product information is repeated.
+- Delivery time is repeated.
+- Update anomalies.
+- Insert anomalies.
+- Delete anomalies.
+
+---------------------------------------------------------
+SECOND NORMAL FORM (2NF)
+---------------------------------------------------------
+
+Customers
+
+| CustomerID | CustomerName | Phone |
+|------------|--------------|-------|
+|1|Alice|123-456-7890|
+|2|Bob|987-654-3210|
+|3|Claire|555-123-4567|
+
+Products
+
+| ItemID | ItemName | Price |
+|--------|----------|------|
+|101|Cheeseburger|8|
+|102|Fries|3|
+|103|Pizza|12|
+|105|Salad|6|
+|106|Water|1|
+
+Orders
+
+| OrderID | CustomerID | Address | DeliveryTime |
+|---------|------------|---------|-------------|
+|001|1|123 Main St|6:00 PM|
+|002|2|456 Elm St|7:30 PM|
+|003|3|789 Oak St|12:00 PM|
+|004|3|464 Georgia St|5:00 PM|
+
+OrderDetails
+
+| OrderID | ItemID | Quantity | SpecialRequest |
+|---------|--------|----------|----------------|
+|001|101|2|No onions|
+|001|102|1|Extra ketchup|
+|002|103|1|Extra cheese|
+|002|102|2|None|
+|003|105|1|No croutons|
+|004|106|1|None|
+
+---------------------------------------------------------
+THIRD NORMAL FORM (3NF)
+---------------------------------------------------------
+
+Customers
+
+| CustomerID | CustomerName | Phone |
+|------------|--------------|-------|
+|1|Alice|123-456-7890|
+|2|Bob|987-654-3210|
+|3|Claire|555-123-4567|
+
+Addresses
+
+| AddressID | Address |
+|-----------|----------------|
+|1|123 Main St|
+|2|456 Elm St|
+|3|4th Avenue|
+|4|789 Oak St|
+|5|464 Georgia St|
+
+Products
+
+| ItemID | ItemName | Price |
+|--------|----------|------|
+|101|Cheeseburger|8|
+|102|Fries|3|
+|103|Pizza|12|
+|105|Salad|6|
+|106|Water|1|
+
+Orders
+
+| OrderID | CustomerID | AddressID | DeliveryTime |
+|---------|------------|-----------|-------------|
+|001|1|1|6:00 PM|
+|002|2|2|7:30 PM|
+|003|3|4|12:00 PM|
+|004|3|5|5:00 PM|
+
+OrderDetails
+
+| OrderID | ItemID | Quantity | SpecialRequest |
+|---------|--------|----------|----------------|
+|001|101|2|No onions|
+|001|102|1|Extra ketchup|
+|002|103|1|Extra cheese|
+|002|102|2|None|
+|003|105|1|No croutons|
+|004|106|1|None|
+
+Justification
+
+1NF
+- Eliminated repeating groups.
+- Every field contains a single value.
+
+2NF
+- Customer data moved to Customers.
+- Product data moved to Products.
+- Order details separated.
+
+3NF
+- Addresses moved to their own table.
+- Every non-key attribute depends only on the primary key.
+- Eliminates update, insertion, and deletion anomalies.
+
+=========================================================
+EXERCISE 2 - CARS
+=========================================================
+
+## Original Table (UNF)
+
+| VIN | Make | Model | Year | Color | Owner ID | Owner Name | Owner Phone | Insurance Company | Insurance Policy |
+|-----|------|-------|------|-------|----------|------------|-------------|-------------------|------------------|
+|1HGCM82633A|Honda|Accord|2003|Silver|101|Alice|123-456-7890|ABC Insurance|Fire & Theft|
+|1HGCM82633A|Honda|Accord|2003|Silver|102|Bob|987-654-3210|XYZ Insurance|Full Cover|
+|5J6RM4H79EL|Honda|CR-V|2014|Blue|103|Claire|555-123-4567|DEF Insurance|Collision|
+|1G1RA6EH1FU|Chevrolet|Volt|2015|Red|104|Dave|111-222-3333|GHI Insurance|Basic Legal|
+
+---------------------------------------------------------
+FIRST NORMAL FORM (1NF)
+---------------------------------------------------------
+
+Primary Key: (VIN, OwnerID)
+
+All values are atomic.
+
+---------------------------------------------------------
+SECOND NORMAL FORM (2NF)
+---------------------------------------------------------
+
+Cars
+
+| VIN | Make | Model | Year | Color |
+|-----|------|-------|------|------|
+|1HGCM82633A|Honda|Accord|2003|Silver|
+|5J6RM4H79EL|Honda|CR-V|2014|Blue|
+|1G1RA6EH1FU|Chevrolet|Volt|2015|Red|
+
+Owners
+
+| OwnerID | OwnerName | OwnerPhone |
+|---------|-----------|-----------|
+|101|Alice|123-456-7890|
+|102|Bob|987-654-3210|
+|103|Claire|555-123-4567|
+|104|Dave|111-222-3333|
+
+CarOwnership
+
+| VIN | OwnerID | InsuranceCompany | InsurancePolicy |
+|-----|---------|-----------------|----------------|
+|1HGCM82633A|101|ABC Insurance|Fire & Theft|
+|1HGCM82633A|102|XYZ Insurance|Full Cover|
+|5J6RM4H79EL|103|DEF Insurance|Collision|
+|1G1RA6EH1FU|104|GHI Insurance|Basic Legal|
+
+---------------------------------------------------------
+THIRD NORMAL FORM (3NF)
+---------------------------------------------------------
+
+Cars
+
+| VIN | Make | Model | Year | Color |
+|-----|------|-------|------|------|
+|1HGCM82633A|Honda|Accord|2003|Silver|
+|5J6RM4H79EL|Honda|CR-V|2014|Blue|
+|1G1RA6EH1FU|Chevrolet|Volt|2015|Red|
+
+Owners
+
+| OwnerID | OwnerName | OwnerPhone |
+|---------|-----------|-----------|
+|101|Alice|123-456-7890|
+|102|Bob|987-654-3210|
+|103|Claire|555-123-4567|
+|104|Dave|111-222-3333|
+
+Insurance
+
+| InsuranceID | Company | Policy |
+|-------------|----------------|---------------|
+|1|ABC Insurance|Fire & Theft|
+|2|XYZ Insurance|Full Cover|
+|3|DEF Insurance|Collision|
+|4|GHI Insurance|Basic Legal|
+
+CarOwnership
+
+| VIN | OwnerID | InsuranceID |
+|-----|---------|-------------|
+|1HGCM82633A|101|1|
+|1HGCM82633A|102|2|
+|5J6RM4H79EL|103|3|
+|1G1RA6EH1FU|104|4|
+
+Justification
+
+1NF
+- Atomic values only.
+
+2NF
+- Car information depends only on VIN.
+- Owner information depends only on OwnerID.
+- Ownership information is separated.
+
+3NF
+- Insurance information moved to its own table.
+- Every non-key attribute depends only on its table's primary key.
+- Eliminates redundancy and update anomalies.

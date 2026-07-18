@@ -1,0 +1,232 @@
+1. Client → Server 💻 → 💻
+
+Step-by-step explanation:
+
+Client (Browser):
+You type www.youtube.com into the browser.
+The browser needs to find where that site is hosted.
+DNS (Domain Name System):
+The browser sends a query to a DNS server.
+DNS translates the domain into an IP address.
+Example: www.youtube.com → 142.250.xxx.xxx
+IP Address:
+This is the real address of the server on the internet.
+The browser now knows where to send the request.
+HTTP/HTTPS Protocol:
+The browser sends an HTTPS request (secure and encrypted).
+Example:
+GET / HTTP/1.1
+Host: www.youtube.com
+Server:
+The server receives the request and:
+Processes it
+Finds the requested resources
+Prepares a response (HTML, CSS, JavaScript, video data)
+Response:
+The server sends data back to the browser.
+Rendering:
+The browser interprets the files and displays the page and video.
+
+Diagram:
+
+Browser → DNS → IP → Server → Response → Browser (Render)
+2. Frontend vs Backend 🧩
+
+Frontend (Client side):
+
+What the user sees and interacts with
+Examples:
+Appointment form
+Calendar
+Buttons
+
+Technologies:
+
+HTML
+CSS
+JavaScript (React, Vue, Angular)
+
+Backend (Server side):
+
+Logic and data handling
+Examples:
+Save appointments
+Manage users
+Validate data
+
+Technologies:
+
+Node.js (Express)
+Python (Django / Flask)
+Java (Spring Boot)
+
+Communication (API + HTTP):
+
+The frontend communicates with the backend using an API over HTTP.
+
+Flow:
+
+Frontend → HTTP Request → API (Backend) → Database
+Frontend ← HTTP Response (JSON) ← Backend
+
+Example:
+
+Request:
+
+POST /appointments
+Content-Type: application/json
+
+Body:
+
+{
+  "name": "John Doe",
+  "date": "2026-05-01",
+  "time": "10:00"
+}
+
+Response:
+
+{
+  "status": "confirmed",
+  "appointmentId": 123
+}
+3. REST vs SOAP vs GraphQL ⚙️
+API Type	Data Format	Flexibility	Difficulty	Current Use
+REST	JSON	Medium (server controls)	Low	High
+SOAP	XML	Low (strict structure)	High	Low
+GraphQL	JSON	High (client controls)	Medium	High
+
+Which is best for a modern startup?
+
+GraphQL
+
+Why:
+
+The client requests exactly the data it needs
+Reduces unnecessary data transfer
+Works well for modern apps (web + mobile)
+
+Alternative: REST (simpler and faster to start)
+
+4. Exploring APIs with Postman 🧪
+Part 1: API Selection
+API Name: PokéAPI
+Description: A free public API that provides data about Pokémon (names, abilities, stats, types).
+Part 2: Postman Setup
+
+Create a Collection:
+
+Name: PokeAPI
+Requests:
+1. GET (Retrieve data)
+
+Endpoint:
+
+https://pokeapi.co/api/v2/pokemon/ditto
+
+Expected Response (JSON):
+
+{
+  "name": "ditto",
+  "height": 3,
+  "weight": 40
+}
+2. POST (Send data)
+
+Endpoint:
+
+https://jsonplaceholder.typicode.com/posts
+
+Body:
+
+{
+  "title": "test",
+  "body": "hello",
+  "userId": 1
+}
+
+Response:
+
+{
+  "id": 101,
+  "title": "test",
+  "body": "hello",
+  "userId": 1
+}
+3. DELETE (Remove data)
+
+Endpoint:
+
+https://jsonplaceholder.typicode.com/posts/1
+
+Response:
+
+Status: 200 OK
+Part 3: Execution and Analysis
+
+For each request check:
+
+Status Codes:
+200 → Success
+404 → Not found
+500 → Server error
+Response Body: JSON data
+Headers Example:
+Content-Type: application/json
+Part 4: README.md
+
+Structure to copy:
+
+# API: PokéAPI
+
+## Description
+PokéAPI is a free API that provides Pokémon data such as name, stats, and abilities.
+
+## Requests
+
+### GET /pokemon/ditto
+- Method: GET
+- Description: Retrieves information about Ditto
+
+Response:
+{
+  "name": "ditto",
+  "height": 3,
+  "weight": 40
+}
+
+### POST /posts
+- Method: POST
+- Description: Creates a new post
+
+Request Body:
+{
+  "title": "test",
+  "body": "hello",
+  "userId": 1
+}
+
+Response:
+{
+  "id": 101,
+  "title": "test",
+  "body": "hello",
+  "userId": 1
+}
+
+### DELETE /posts/1
+- Method: DELETE
+- Description: Deletes a post
+
+Response:
+Status: 200 OK
+
+## What I Learned
+- How APIs use request and response
+- How to test endpoints using Postman
+- How frontend communicates with backend
+5. Final Reflection 🧭
+
+APIs allow different systems to communicate using structured requests and responses. They act as a bridge between the frontend and backend, enabling data exchange without exposing internal logic.
+
+Postman helped me understand this process by allowing me to send requests, inspect responses, and analyze status codes and headers. This made the communication between client and server much clearer and easier to visualize.
