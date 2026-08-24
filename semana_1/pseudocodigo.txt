@@ -1,0 +1,71 @@
+1. Cree un pseudocódigo que le pidan un precio del producto al usuario, calcule su descuento y muestre el precio final tomando en cuenta que:
+2. Si el precio es menor a 100, el descuento es del 2%
+
+b.  Si el precio el mayor a 100, el descuento es del 10%
+
+1. Definir precio, descuento, precioFinal
+2. Escribir "Ingrese el precio del producto:
+3. Leer precio
+4. Si precio <= 100 Entonces
+
+descuento ← precio * 0.02
+
+1. Sino
+
+descuento ← precio * 0.10
+
+5. FinSi
+
+6.  precioFinal ← precio - descuento
+
+7. Escribir "El descuento aplicado es: ", descuento
+
+8. Escribir "El precio final del producto es: ", precioFinal
+
+9. Fin
+
+Cree un pseudocódigo que le pida un tiempo en segundos al usuario calcule  si es menor o mayor a 10 min. Si es menor, muestre cuántos segundos faltarían para llegar a los 10 min. Si es mayor, muestre “Mayor”
+
+1. Inicio
+1. Inicio
+2. Definir tiempo, faltante
+3. Escribir "Ingrese el tiempo en segundos:"
+4. Leer tiempo
+5. Si tiempo ≥ 600 Entonces // 10 minutos = 600 segundos
+
+a. Escribir "Mayor"
+
+1. Sino
+2. faltante 600 - tiempo
+
+b. Escribir "Faltan ", faltante, " segundos para llegar a 10 minutos."
+
+7.  FinSi
+
+8. Fin
+
+Cree un algoritmo que le pida un número al usuario, y realice la suma de cada número del 1 hasta ese número ingresado. Luego el resultado de la suma.
+
+1. Inicio
+
+2. Definir num, suma, contador
+
+3. Escribir "Ingrese un número:"
+
+4. Leer num
+
+1. suma ← 0
+
+b. contador ← 1
+
+5. Mientras contador ≤ num Hacer
+
+1. suma ← suma + contador
+
+b. contador ← contador + 1
+
+6.   FinMientras
+
+7. Escribir "La suma de los números del 1 hasta", num, "es:", suma
+
+8. Fin

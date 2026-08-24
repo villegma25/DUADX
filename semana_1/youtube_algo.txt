@@ -1,0 +1,28 @@
+YouTube algoritmo
+
+    1. Inicio
+    2. Si tiene computadora:
+        a. Ingresar a Youtube
+    3. Sino, si tiene smartphone, o si tiene tablet, o si tiene smart TV:
+        a. Ingresar a la app de Netflix
+    4. Sino:
+        a. Busque a alguien que si tenga alguno de los anteriores y pidaselo prestado.
+    5. 
+    6. Pasar la seguridad
+           
+         Sino: Reset password
+    7. Pasar seguridad del device
+
+            i. Abrir el app          
+
+            Sino: 
+
+            ii. Abrir un buscador de internet 
+            iii. Ir a youtube
+
+    8. Bucar un video de interés 
+
+    9. Reproducir video 
+
+    10. Fin
+                        
